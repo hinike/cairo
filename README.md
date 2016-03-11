@@ -9,6 +9,18 @@ Demo: [everyAir](https://www.youtube.com/watch?v=amMRNjE6MsQ)
 This release contains an early and *unoptimized* version of Cairo that demonstrates the basic functionality of the codec. 
 Cairo's new purpose is to serve as an educational resource for students who are interested in video compression. This release presents a simple and easy to read implementation that demonstrates several common techniques without the complexities of optimizations or platform dependencies.
 
+### Running Cairo
+evx1.h describes the primary interface for Cairo. Follow these steps to create and activate the *encoder*:
+
+* Create a bit_stream object and initialize it to some large size.
+* [optional] Set your desired quality level by calling *set_quality* with a value between 1 and 31 (inclusive).
+* Create an evx1_encoder object and call its *encode* method to encode an RGB frame.
+
+Follow these steps to create and activate the *decoder*:
+
+* Create a bit_stream object and initialize it to some large size.
+* Create an evx1_decoder object and call its *decode* method to decode a bit_stream and recover an RGB image.
+
 ### Caution: patent hazard
 Note that while this release is provided under an open and permissive copyright license, the algorithms it contains are likely to be covered by existing patents that may restrict your ability to use this codec commercially. 
 

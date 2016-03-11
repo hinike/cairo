@@ -80,9 +80,7 @@ public:
     // this when recovering from dropped packets or to enable seekability.
     virtual evx_status insert_intra() = 0;
 
-    // Sets a quality level between 0-100, with 0 being the lowest quality.
-    // If quality is set to 100, then the codec will operate in a lossless 
-    // high bitrate mode.
+    // Sets a quality level between 0-31, with 0 being the highest quality.
     virtual evx_status set_quality(uint8 quality) = 0;
      
     // The input image must contain R8G8B8 formatted data. Upon return, output will
