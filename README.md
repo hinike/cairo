@@ -1,5 +1,5 @@
 ## Cairo Experimental Video Codec
-Cairo is a simple streaming video codec that was created as part of the (now discontinued) [everyAir mobile cloud gaming project](http://www.everyair.net). Its original purpose was to help us experiment with low latency game streaming on early mobile hardware (original iPad, iPhone 3GS). Using a heavily tuned implementation, Cairo enabled everyAir to stream PC, Mac, and even PS3 games to iOS devices with extremely low encode and decode latencies.
+Cairo is a simple streaming video codec that was created in 2011 as part of the (now discontinued) [everyAir mobile cloud gaming project](http://www.everyair.net). Its original purpose was to help us experiment with low latency game streaming on early mobile hardware (original iPad, iPhone 3GS). Using a heavily tuned implementation, Cairo enabled everyAir to stream PC, Mac, and even PS3 games to iOS devices with extremely low encode and decode latencies.
 
 Demo: [PS3 streaming](https://youtu.be/B14c8gFgdXM?t=64)  
 Demo: [latency test](https://youtu.be/IN4wC_SVaN8?t=19)  
