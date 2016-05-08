@@ -13,9 +13,8 @@ Demo: [everyAir](https://www.youtube.com/watch?v=amMRNjE6MsQ)
 * Variance adaptive quantization (both uniform and non-uniform)
 * Intelligent skip block detection that minimizes visual artifacts
 * Periodic intra frame insertion (useful for keyframing)
-* Supports interleaved 24 bit RGB source images
-* Internal image representation in planar YUV 4:2:0
-* Support for multiple lossless backend compressors including:
+* Internal support for planar YUV 4:2:0 images
+* Support for multiple lossless backend compressors involving:
   * Adaptive binary arithmetic coding
   * Exponential Golomb coding
   * Run-length encoding
@@ -34,7 +33,7 @@ evx1.h describes the primary interface for Cairo. Follow these steps to create a
 
 * Create a bit_stream object and initialize it to some large size.
 * [optional] Set your desired quality level by calling *set_quality* with a value between 1 and 31 (inclusive).
-* Create an evx1_encoder object and call its *encode* method to encode an RGB frame.
+* Create an evx1_encoder object and call its *encode* method to encode a 24 bit interleaved RGB frame.
 
 Follow these steps to create and activate the *decoder*:
 
