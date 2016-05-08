@@ -12,10 +12,13 @@ Demo: [everyAir](https://www.youtube.com/watch?v=amMRNjE6MsQ)
 * Support for up to 16 reference frames
 * Variance adaptive quantization (both uniform and non-uniform)
 * Intelligent skip block detection that minimizes visual artifacts
-* Periodic intra frame insertion
-* YUV 4:2:0 Planar internal color format
-* Adaptive binary arithmetic coder
-* Exponential Golomb coder
+* Periodic intra frame insertion (useful for keyframing)
+* Supports interleaved 24 bit RGB source images
+* Internal image representation in planar YUV 4:2:0
+* Support for multiple lossless backend compressors including:
+  * Adaptive binary arithmetic coding
+  * Exponential Golomb coding
+  * Run-length encoding
 * Delta coded macroblocks and motion vectors
 * In-loop deblocking filter
 * 100% integer math
