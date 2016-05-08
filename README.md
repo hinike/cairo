@@ -17,6 +17,7 @@ Demo: [everyAir](https://www.youtube.com/watch?v=amMRNjE6MsQ)
 * Support for multiple lossless backend compressors involving:
   * Adaptive binary arithmetic coding
   * Exponential Golomb coding
+  * Huffman coding
   * Run-length encoding
 * Delta coded macroblocks and motion vectors
 * In-loop deblocking filter
