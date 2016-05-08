@@ -9,7 +9,7 @@ Demo: [everyAir](https://www.youtube.com/watch?v=amMRNjE6MsQ)
 
 * Support for intra (i-frame) and inter (p-frame) frame prediction modes
 * Motion compensation with half and quarter pixel precision
-* Support for up to 16 reference frames
+* Supports a virtually unlimited number of reference frames
 * Variance adaptive quantization (both uniform and non-uniform)
 * Intelligent skip block detection that minimizes visual artifacts
 * Periodic intra frame insertion (useful for keyframing)
