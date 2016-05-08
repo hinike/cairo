@@ -5,6 +5,23 @@ Demo: [PS3 streaming](https://youtu.be/B14c8gFgdXM?t=64)
 Demo: [latency test](https://youtu.be/IN4wC_SVaN8?t=19)  
 Demo: [everyAir](https://www.youtube.com/watch?v=amMRNjE6MsQ)
 
+### Features
+
+* Support for intra (i-frame) and inter (p-frame) frame prediction modes
+* Motion compensation with half and quarter pixel precision
+* Support for up to 16 reference frames
+* Variance adaptive quantization (both uniform and non-uniform)
+* Intelligent skip block detection that minimizes visual artifacts
+* Periodic intra frame insertion
+* YUV 4:2:0 Planar internal color format
+* Adaptive binary arithmetic coder
+* Exponential Golomb coder
+* Delta coded macroblocks and motion vectors
+* In-loop deblocking filter
+* 100% integer math
+* Cross platform, fully portable code
+* Simple and easy to read, designed for educational purposes
+
 ### Open Source Release
 This release contains an early and *unoptimized* version of Cairo that demonstrates the basic functionality of the codec. 
 Cairo's new purpose is to serve as an educational resource for students who are interested in video compression. This release presents a simple and easy to read implementation that demonstrates several common techniques without the complexities of optimizations or platform dependencies.
