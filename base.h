@@ -40,7 +40,7 @@
 **********************************************************************************/
 
 #if defined (_WIN32) || defined (_WIN64)
-    #include "windows.h"                                    
+    #include "windows.h"                
    
     #pragma warning (disable : 4244)                      // conversion, possible loss of data   
     #pragma warning (disable : 4018)                      // signed / unsigned mismatch
@@ -51,15 +51,14 @@
     #define EVX_PLATFORM_WINDOWS                          // building a Windows application
 #elif defined (__APPLE__)
     #include "TargetConditionals.h"
-    #import "Foundation/Foundation.h"
     #include "unistd.h"
     #include "sys/types.h"
     #include "ctype.h"
 
     #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-        #define EVX_PLATFORM_IOS                              // building an application for iOS
+        #define EVX_PLATFORM_IOS                          // building an application for iOS
     #elif TARGET_OS_MAC
-        #define EVX_PLATFORM_MACOSX                           // building a Mac OSX application
+        #define EVX_PLATFORM_MACOSX                       // building a Mac OSX application
     #endif
 #else
     #error "Unsupported target platform detected."

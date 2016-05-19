@@ -53,9 +53,9 @@
 #define EVX_MIN_INT8            (-EVX_MAX_INT8 - 1)
 
 #define EVX_PI					(3.14159262f)
-#define EVX_INFINITY			(1.0e15f )
-#define EVX_EPSILON				(1.0e-5f )
-#define EVX_LOG2                (0.3010299956639f ) 
+#define EVX_INFINITY			(1.0e15f)
+#define EVX_EPSILON				(1.0e-5f)
+#define EVX_LOG2                (0.3010299956639f) 
 
 #define evx_min2( a, b )        ((a) < (b) ? (a) : (b))
 #define evx_max2( a, b )        ((a) > (b) ? (a) : (b))
@@ -188,30 +188,24 @@ inline float log2(float value)
 
 inline int8 abs(int8 value) 
 {
-    if (0x80 == value) 
-    {
-        return 0x7F;
-    }
+    if (value == EVX_MIN_INT8) 
+        return EVX_MAX_INT8;
 
     return (value < 0 ? -value : value);
 }
 
 inline int16 abs(int16 value) 
 {
-    if (0x1000 == value) 
-    {
-        return 0x7FFF;
-    }
+    if (value == EVX_MIN_INT16) 
+        return EVX_MAX_INT16;
 
     return (value < 0 ? -value : value);
 }
 
 inline int32 abs(int32 value) 
 {
-    if (0x10000000 == value) 
-    {
-        return 0x7FFFFFFF;
-    }
+    if (value == EVX_MIN_INT32) 
+        return EVX_MAX_INT32;
 
     return (value < 0 ? -value : value);
 }
