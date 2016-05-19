@@ -52,9 +52,9 @@
 #define EVX_MIN_INT16           (-EVX_MAX_INT16 - 1)
 #define EVX_MIN_INT8            (-EVX_MAX_INT8 - 1)
 
-#define EVX_PI					(3.14159262f)
-#define EVX_INFINITY			(1.0e15f)
-#define EVX_EPSILON				(1.0e-5f)
+#define EVX_PI                  (3.14159262f)
+#define EVX_INFINITY            (1.0e15f)
+#define EVX_EPSILON             (1.0e-5f)
 #define EVX_LOG2                (0.3010299956639f) 
 
 #define evx_min2( a, b )        ((a) < (b) ? (a) : (b))
