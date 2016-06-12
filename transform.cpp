@@ -78,7 +78,7 @@ void transform_4x4_line_fast(int16 *src, uint32 src_pitch, int16 *dest, uint32 d
 
 void transform_4x4(int16 *src, uint32 src_pitch, int16 *dest, uint32 dest_pitch)
 {
-    static int16 scratch_block[4*4];
+    int16 scratch_block[4*4];
 
     // Horizontal DCT-II
     for (uint8 j = 0; j < 4; ++j)
@@ -139,7 +139,7 @@ void inverse_transform_4x4_line_fast(int16 *src, uint32 src_pitch, int16 *dest, 
 
 void inverse_transform_4x4(int16 *src, uint32 src_pitch, int16 *dest, uint32 dest_pitch)
 {
-    static int16 scratch_block[4*4];
+    int16 scratch_block[4*4];
 
     // Vertical IDCT-II
     for (uint8 j = 0; j < 4; ++j)
@@ -202,7 +202,7 @@ void inverse_transform_add_4x4_line_fast(int16 *src, uint32 src_pitch, int16 *ad
 
 void inverse_transform_add_4x4(int16 *src, uint32 src_pitch, int16 *add, uint32 add_pitch, int16 *dest, uint32 dest_pitch)
 {
-    static INT16 scratch_block[4*4];
+    int16 scratch_block[4*4];
 
     // Vertical IDCT-II
     for (uint8 j = 0; j < 4; ++j)
@@ -211,7 +211,7 @@ void inverse_transform_add_4x4(int16 *src, uint32 src_pitch, int16 *add, uint32 
     }
 
     // Horizontal IDCT-II
-    for ( UINT8 j = 0; j < 4; j++ )
+    for (uint8 j = 0; j < 4; j++)
     {
         inverse_transform_add_4x4_line_fast(scratch_block + j * 4, 1, add + j * add_pitch, 1, dest + j * dest_pitch, 1 );
     }
@@ -219,18 +219,18 @@ void inverse_transform_add_4x4(int16 *src, uint32 src_pitch, int16 *add, uint32 
 
 void sub_transform_4x4(int16 *src, uint32 src_pitch, int16 *sub, uint32 sub_pitch, int16 *dest, uint32 dest_pitch)
 {
-    static int16 scratch_block[4*4];
-    static int16 sub_scratch_block[4*4];
+    int16 scratch_block[4*4];
+    int16 sub_scratch_block[4*4];
 
     // Horizontal IDCT-II
-    for ( UINT8 j = 0; j < 4; j++ ) 
+    for (uint8 j = 0; j < 4; j++) 
     {
         sub_4x4_line(src + j * src_pitch, sub + j * sub_pitch, sub_scratch_block + j * 4 );
         transform_4x4_line_fast(sub_scratch_block + j * 4, 1, scratch_block + j * 4, 1 );
     }
     
     // Vertical IDCT-II
-    for ( UINT8 j = 0; j < 4; j++ )
+    for (uint8 j = 0; j < 4; j++)
     {
         transform_4x4_line_fast(scratch_block + j, 4, dest + j, dest_pitch);
     }
@@ -285,7 +285,7 @@ void transform_8x8_line_fast(int16 *src, uint32 src_pitch, int16 *dest, uint32 d
 
 void transform_8x8(int16 *src, uint32 src_pitch, int16 *dest, uint32 dest_pitch)
 {
-    static int16 scratch_block[8*8];
+    int16 scratch_block[8*8];
 
     // Horizontal DCT-II
     for (uint8 j = 0; j < 8; ++j)
@@ -350,7 +350,7 @@ void inverse_transform_8x8_line_fast(int16 *src, uint32 src_pitch, int16 *dest, 
 
 void inverse_transform_8x8(int16 *src, uint32 src_pitch, int16 *dest, uint32 dest_pitch)
 {
-    static int16 scratch_block[8*8];
+    int16 scratch_block[8*8];
 
     // Vertical IDCT-II
     for (uint8 j = 0; j < 8; ++j)
@@ -417,7 +417,7 @@ void inverse_transform_add_8x8_line_fast(int16 *src, uint32 src_pitch, int16 *ad
 
 void inverse_transform_add_8x8(int16 *src, uint32 src_pitch, int16 *add, uint32 add_pitch, int16 *dest, uint32 dest_pitch)
 {
-    static INT16 scratch_block[8*8];
+    int16 scratch_block[8*8];
 
     // Vertical IDCT-II
     for (uint8 j = 0; j < 8; ++j)
@@ -426,7 +426,7 @@ void inverse_transform_add_8x8(int16 *src, uint32 src_pitch, int16 *add, uint32 
     }
 
     // Horizontal IDCT-II
-    for ( UINT8 j = 0; j < 8; j++ )
+    for (uint8 j = 0; j < 8; j++)
     {
         inverse_transform_add_8x8_line_fast(scratch_block + j * 8, 1, add + j * add_pitch, 1, dest + j * dest_pitch, 1 );
     }
@@ -434,18 +434,18 @@ void inverse_transform_add_8x8(int16 *src, uint32 src_pitch, int16 *add, uint32 
 
 void sub_transform_8x8(int16 *src, uint32 src_pitch, int16 *sub, uint32 sub_pitch, int16 *dest, uint32 dest_pitch)
 {
-    static int16 scratch_block[8*8];
-    static int16 sub_scratch_block[8*8];
+    int16 scratch_block[8*8];
+    int16 sub_scratch_block[8*8];
 
     // Horizontal IDCT-II
-    for ( UINT8 j = 0; j < 8; j++ ) 
+    for (uint8 j = 0; j < 8; j++) 
     {
         sub_8x8_line(src + j * src_pitch, sub + j * sub_pitch, sub_scratch_block + j * 8);
         transform_8x8_line_fast(sub_scratch_block + j * 8, 1, scratch_block + j * 8, 1 );
     }
     
     // Vertical IDCT-II
-    for ( UINT8 j = 0; j < 8; j++ )
+    for (uint8 j = 0; j < 8; j++)
     {
         transform_8x8_line_fast(scratch_block + j, 8, dest + j, dest_pitch);
     }
